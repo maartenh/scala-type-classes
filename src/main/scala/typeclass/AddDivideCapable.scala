@@ -1,11 +1,17 @@
 package typeclass
 
+/**
+  * Type class definition
+  */
 trait AddDivideCapable[T] {
   def add(x: T, y: T): T
   def div(n: T, d: Int): T
 }
 
 
+/**
+  * Type class implementations
+  */
 object AddDivideCapable {
   implicit object AddDivideInt extends AddDivideCapable[Int] {
     override def add(x: Int, y: Int): Int = x + y

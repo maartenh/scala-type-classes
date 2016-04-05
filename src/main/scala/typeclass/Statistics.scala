@@ -2,12 +2,19 @@ package typeclass
 
 object Statistics extends App {
   
+  /**
+    * Produce a sum of all the elements of the sequence
+    */
   def sum[T](xs: Seq[T])(implicit ev: AddDivideCapable[T]): T =
     xs.reduce(ev.add)
     
-    
+  /**
+    * Calculate the mean value all the elements of the sequence
+    */
   def mean[T](xs: Seq[T])(implicit ev: AddDivideCapable[T]): T =
     ev.div(xs.reduce(ev.add), xs.length)
+  
+  
   
   
   val ints = List(4, 1, 6, 9, 6, 10, 11)
