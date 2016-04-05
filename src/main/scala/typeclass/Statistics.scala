@@ -5,14 +5,14 @@ object Statistics extends App {
   /**
     * Produce a sum of all the elements of the sequence
     */
-  def sum[T](xs: Seq[T])(implicit ev: AddDivideCapable[T]): T =
-    xs.reduce(ev.add)
+  def sum[T: AddDivideCapable](xs: Seq[T]): T =
+    xs.reduce(AddDivideCapable[T].add)
     
   /**
     * Calculate the mean value all the elements of the sequence
     */
-  def mean[T](xs: Seq[T])(implicit ev: AddDivideCapable[T]): T =
-    ev.div(xs.reduce(ev.add), xs.length)
+  def mean[T: AddDivideCapable](xs: Seq[T]): T =
+    AddDivideCapable[T].div(sum(xs), xs.length)
   
   
   

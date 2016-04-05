@@ -1,8 +1,11 @@
 package typeclass
 
+import scala.annotation.implicitNotFound
+
 /**
   * Type class definition
   */
+@implicitNotFound("No member of type class AddDivideCapable found for type ${T}")
 trait AddDivideCapable[T] {
   def add(x: T, y: T): T
   def div(n: T, d: Int): T
@@ -13,6 +16,8 @@ trait AddDivideCapable[T] {
   * Type class implementations
   */
 object AddDivideCapable {
+  def apply[T: AddDivideCapable]: AddDivideCapable[T] = implicitly[AddDivideCapable[T]]
+  
   implicit object AddDivideInt extends AddDivideCapable[Int] {
     override def add(x: Int, y: Int): Int = x + y
     override def div(n: Int, d: Int): Int = n / d
