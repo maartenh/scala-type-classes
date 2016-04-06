@@ -11,7 +11,7 @@ object Statistics extends App {
   /**
     * Calculate the mean value all the elements of the sequence
     */
-  def mean[T](xs: Seq[T]) = ???
+  def mean[T](xs: Seq[T]): T = ???
 
 
 
