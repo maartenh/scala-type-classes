@@ -16,3 +16,14 @@ Setup instructions
  * Clone this repository
  * Make sure you can successfully compile it with `sbt`.
  * Enjoy
+
+
+
+Sources
+---
+
+This presentation was heavily inspired by the following blog posts.
+Please refer to them for more information and background.
+
+ * http://danielwestheide.com/blog/2013/02/06/the-neophytes-guide-to-scala-part-12-type-classes.html
+ * http://aakashns.github.io/better-type-class.html
